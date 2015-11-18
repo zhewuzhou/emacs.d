@@ -17,11 +17,4 @@
   (set-selection-coding-system (if (eq system-type 'windows-nt) 'utf-16-le 'utf-8))
   (prefer-coding-system 'utf-8))
 
-(require 'evil)
-(evil-mode 1)
-
-(global-evil-leader-mode)
-(evil-leader/set-leader ",")
-(evilem-default-keybindings ",")
-
 (provide 'init-locales)
