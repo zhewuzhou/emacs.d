@@ -11,7 +11,7 @@
 
 ;; Various preferences
 (setq org-log-done t
-      org-completion-use-ido t
+      org-completion-use-ido nil
       org-edit-timestamp-down-means-later t
       org-archive-mark-done nil
       org-catch-invisible-edits 'show
