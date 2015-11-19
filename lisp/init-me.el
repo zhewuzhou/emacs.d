@@ -27,6 +27,7 @@ Repeated invocations toggle between the two most recently open buffers."
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 ;;;====================YAS====================
+(require 'yasnippet)
 (yas-global-mode 1)
 
 (provide 'init-me)
