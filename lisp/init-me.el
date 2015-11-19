@@ -15,6 +15,7 @@
   "f" 'helm-imenu
   "o" 'delete-other-windows
   "s" 'delete-trailing-whitespace
+  "q" 'save-buffers-kill-terminal
   "w" 'save-buffer)
 
 (evilem-default-keybindings "SPC")
