@@ -16,6 +16,7 @@
   "o" 'delete-other-windows
   "s" 'delete-trailing-whitespace
   "q" 'save-buffers-kill-terminal
+  "e" 'eval-last-sexp
   "w" 'save-buffer)
 
 (evilem-default-keybindings "SPC")
