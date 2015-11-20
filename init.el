@@ -158,6 +158,7 @@
                      (sanityinc/time-subtract-millis after-init-time before-init-time))))
 
 (require 'init-me)
+(require 'init-linum)
 
 (provide 'init)
 
