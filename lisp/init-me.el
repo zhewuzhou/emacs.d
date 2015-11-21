@@ -17,9 +17,11 @@
 (evil-leader/set-key
   "," 'evil-repeat-find-char-reverse
   "." 'switch-to-previous-buffer
+  "g" 'magit-status
   "x" 'helm-M-x
   "b" 'helm-mini
-  "f" 'helm-imenu
+  "F" 'helm-imenu
+  "f" 'helm-find
   "o" 'delete-other-windows
   "O" 'other-window
   "s" 'delete-trailing-whitespace
@@ -31,12 +33,22 @@
 
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
-Repeated invocations toggle between the two most recently open buffers."
+  Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+
+(defun kill-other-buffers ()
+  "Kill all other buffers"
+  (interactive) (dolist (buffer (buffer-list))
+    (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
+      (kill-buffer buffer))))
 
 ;;;====================YAS====================
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;;;====================LOAD-MY-BASH-CONFIG====================
+(setq explicit-bash-args '("--login" "--init-file" "~/.bashrc" "-i"))
 
 (provide 'init-me)
