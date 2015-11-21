@@ -14,6 +14,7 @@
   "b" 'helm-mini
   "f" 'helm-imenu
   "o" 'delete-other-windows
+  "O" 'other-window
   "s" 'delete-trailing-whitespace
   "q" 'save-buffers-kill-terminal
   "e" 'eval-last-sexp
