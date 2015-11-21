@@ -5,10 +5,17 @@
 (require-package 'yasnippet)
 
 ;;;====================EVIL====================
-(evil-mode 1)
-(global-evil-leader-mode)
+(require 'evil-leader)
+(evil-mode nil)
+(require 'evil-leader)
+(require 'evil)
 (evil-leader/set-leader ",")
+(evil-mode nil)
+(global-evil-leader-mode 1)
+(evil-mode 1)
+(setq evil-leader/in-all-states t)
 (evil-leader/set-key
+  "," 'evil-repeat-find-char-reverse
   "." 'switch-to-previous-buffer
   "x" 'helm-M-x
   "b" 'helm-mini
