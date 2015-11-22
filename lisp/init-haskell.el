@@ -14,10 +14,6 @@
 (after-load 'haskell-mode
   (define-key haskell-mode-map (kbd "C-c C-d") 'ac-haskell-process-popup-doc))
 
-(after-load 'auto-complete
-  (add-to-list 'ac-modes 'haskell-interactive-mode)
-  (add-hook 'haskell-interactive-mode-hook 'set-auto-complete-as-completion-at-point-function))
-
 (when (executable-find "ghci-ng")
   (setq-default haskell-process-args-cabal-repl
                 '("--ghc-option=-ferror-spans" "--with-ghc=ghci-ng")))
