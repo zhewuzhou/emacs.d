@@ -3,6 +3,7 @@
 (require-package 'evil-leader)
 (require-package 'evil-easymotion)
 (require-package 'yasnippet)
+(require-package 'company)
 
 ;;;====================EVIL====================
 (require 'evil-leader)
@@ -47,6 +48,10 @@
 ;;;====================YAS====================
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;;;====================COMPANY====================
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;;;====================LOAD-MY-BASH-CONFIG====================
 (setq explicit-bash-args '("--login" "--init-file" "~/.bashrc" "-i"))
