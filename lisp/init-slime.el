@@ -5,7 +5,6 @@
 (mapc #'delete-file
       (file-expand-wildcards (concat user-emacs-directory "elpa/slime-2*/contrib/*.elc")))
 
-(require-package 'ac-slime)
 (require-package 'hippie-expand-slime)
 
 
