@@ -1,7 +1,7 @@
 ;; This is a place to put my own stuff
 (require-package 'evil)
 (require-package 'evil-leader)
-(require-package 'evil-easymotion)
+(require-package 'avy)
 (require-package 'yasnippet)
 (require-package 'company)
 
@@ -17,6 +17,7 @@
 (setq evil-leader/in-all-states t)
 (evil-leader/set-key
   "," 'evil-repeat-find-char-reverse
+  "c" 'avy-goto-char-2
   "." 'switch-to-previous-buffer
   "g" 'magit-status
   "x" 'helm-M-x
