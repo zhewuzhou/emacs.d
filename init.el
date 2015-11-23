@@ -94,16 +94,12 @@
 (require 'init-python-mode)
 (require 'init-haskell)
 (require 'init-elm)
-(require 'init-ruby-mode)
 (require 'init-rails)
 (require 'init-sql)
 
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-slime)
-(unless (version<= emacs-version "24.2")
-  (require 'init-clojure)
-  (require 'init-clojure-cider))
 (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
