@@ -26,7 +26,8 @@
   "f" 'helm-find
   "o" 'delete-other-windows
   "O" 'other-window
-  "s" 'delete-trailing-whitespace
+  "s" 'ag-project
+  "S" 'delete-trailing-whitespace
   "q" 'save-buffers-kill-terminal
   "e" 'eval-last-sexp
   "w" 'save-buffer)
