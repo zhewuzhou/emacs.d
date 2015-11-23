@@ -31,8 +31,6 @@
   "e" 'eval-last-sexp
   "w" 'save-buffer)
 
-(evilem-default-keybindings "SPC")
-
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
   Repeated invocations toggle between the two most recently open buffers."
