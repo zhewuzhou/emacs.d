@@ -1,9 +1,8 @@
-;;; init-org.el --- Set up Org Mode
+;;; init-org.el org plus evil
 ;;; Commentary:
 
-;; Basic Org Mode configuration, assuming presence of Evil & Evil Leader.
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
-;;; Code:
 (when (and (maybe-require-package 'org)
            (maybe-require-package 'evil-leader)
            (maybe-require-package 'evil))
