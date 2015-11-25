@@ -123,6 +123,7 @@
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
 (require 'server)
+;;;fix windows issues(defun server-ensure-safe-dir (dir) "Noop" t)
 (unless (server-running-p)
   (server-start))
 
