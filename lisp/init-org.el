@@ -10,7 +10,10 @@
   (setq org-agenda-files '("~/Dropbox/org/"))
 
   (evil-leader/set-key-for-mode 'org-mode
-                                "t"  'org-time-stamp-inactive
+                                "I"  'org-time-stamp-inactive
+                                "S"  'org-time-stamp
+                                "t"  'org-set-tags-command
+                                "T"  'org-todo
                                 "p"  '(lambda ()
                                         (interactive)
                                         (org-insert-property-drawer))
@@ -36,7 +39,7 @@
 ;;; states and faces
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "DOING(n)" "|" "DONE(d)")
-              (sequence "BLOCKED(w@/!)" "REVIEW(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
+              (sequence "BLOCKED(b@/!)" "REVIEW(r@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
 
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "red" :weight bold)
@@ -47,6 +50,34 @@
               ("CANCELLED" :foreground "forest green" :weight bold)
               ("MEETING" :foreground "forest green" :weight bold)
               ("PHONE" :foreground "forest green" :weight bold))))
+
+;;; org tags
+(setq org-tag-alist (quote ((:startgroup)
+                            ("@errand" . ?e)
+                            ("@office" . ?o)
+                            ("@home" . ?H)
+                            (:endgroup)
+                            ("BLOCKED" . ?b)
+                            ("REVIEW" . ?r)
+                            ("PERSONAL" . ?P)
+                            ("WORK" . ?W)
+                            ("PRODUCTIVE" . ?P)
+                            ("RESEARCH" . ?R)
+                            ("DATA" . ?D)
+                            ("LANG" . ?L)
+                            ("OS" . ?S)
+                            ("THEORY" . ?T)
+                            ("CODING" . ?C)
+                            ("BLOG" . ?B)
+                            ("ORG" . ?O)
+                            ("NORANG" . ?N)
+                            ("CANCELLED" . ?c))))
+
+; Allow setting single tags without the menu
+(setq org-fast-tag-selection-single-key (quote expert))
+
+; For tag searches ignore tasks with scheduled and deadline dates
+(setq org-agenda-tags-todo-honor-ignore-options t)
 
 (provide 'init-org)
 ;;; init-org.el ends here
