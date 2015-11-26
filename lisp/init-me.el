@@ -18,6 +18,7 @@
 (evil-leader/set-key
   "," 'evil-repeat-find-char-reverse
   "c" 'avy-goto-char-2
+  "C" 'ispell-word
   "." 'switch-to-previous-buffer
   "g" 'magit-status
   "x" 'helm-M-x
@@ -42,8 +43,8 @@
 (defun kill-other-buffers ()
   "Kill all other buffers"
   (interactive) (dolist (buffer (buffer-list))
-    (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
-      (kill-buffer buffer))))
+                  (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
+                    (kill-buffer buffer))))
 
 ;;;====================YAS====================
 (require 'yasnippet)
@@ -52,6 +53,11 @@
 ;;;====================COMPANY====================
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
+(with-eval-after-load 'company
+                      (define-key company-active-map (kbd "M-n") nil)
+                      (define-key company-active-map (kbd "M-p") nil)
+                      (define-key company-active-map (kbd "C-n") #'company-select-next)
+                      (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
 ;;;====================LOAD-MY-BASH-CONFIG====================
 (setq explicit-bash-args '("--login" "--init-file" "~/.bashrc" "-i"))
