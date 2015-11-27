@@ -86,7 +86,6 @@
 (require 'init-erlang)
 (require 'init-javascript)
 (require 'init-php)
-(require 'init-org)
 (require 'init-nxml)
 (require 'init-html)
 (require 'init-css)
@@ -101,6 +100,10 @@
 (require 'init-lisp)
 (require 'init-slime)
 (require 'init-common-lisp)
+
+; org stuff
+(require 'init-org)
+(require 'init-org-capture)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
