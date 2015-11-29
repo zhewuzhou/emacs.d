@@ -2,24 +2,27 @@
 
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
+(setq org-agenda-files (quote ("~/Dropbox/org"
+                               "~/Personal")))
+
 (when (and (maybe-require-package 'org)
            (maybe-require-package 'evil-leader)
            (maybe-require-package 'evil))
 
   (evil-leader/set-key-for-mode 'org-mode
-                                "I"  'org-time-stamp-inactive
-                                "c"  'org-capture
-                                "S"  'org-time-stamp
-                                "t"  'org-set-tags-command
-                                "T"  'org-todo
-                                "p"  '(lambda ()
-                                        (interactive)
-                                        (org-insert-property-drawer))
-                                "d"  'org-deadline
-                                "s"  'org-schedule
-                                "a"  'org-agenda
-                                "ns" 'org-narrow-to-subtree
-                                "$"  'org-archive-subtree)
+    "I"  'org-time-stamp-inactive
+    "c"  'org-capture
+    "S"  'org-time-stamp
+    "t"  'org-set-tags-command
+    "T"  'org-todo
+    "p"  '(lambda ()
+            (interactive)
+            (org-insert-property-drawer))
+    "d"  'org-deadline
+    "s"  'org-schedule
+    "a"  'org-agenda
+    "ns" 'org-narrow-to-subtree
+    "$"  'org-archive-subtree)
 
   (evil-define-key 'normal org-mode-map (kbd "C-<") 'org-metaleft)
   (evil-define-key 'normal org-mode-map (kbd "C->") 'org-metaright)

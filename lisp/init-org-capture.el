@@ -2,7 +2,6 @@
 
 ; org remember stuff
 (setq org-agenda-text-search-extra-files '(agenda-archives))
-(setq org-agenda-files '("~/Dropbox/org"))
 (setq org-directory "~/Dropbox/org")
 (setq org-default-notes-file "~/Dropbox/org/refile.org")
 
