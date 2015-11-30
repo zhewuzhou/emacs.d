@@ -24,8 +24,8 @@
   "d"  'delete-other-windows
   "D"  'delete-all-other-buffers
   "e"  'eval-last-sexp
-  "F"  'helm-imenu
-  "f"  'helm-find
+  "f"  'helm-projectile-find-file
+  "F"  'helm-find
   "g"  'magit-status
   "nt" 'neotree-toggle
   "O"  'other-window
