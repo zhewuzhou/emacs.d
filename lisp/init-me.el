@@ -16,22 +16,24 @@
 (evil-mode 1)
 (setq evil-leader/in-all-states t)
 (evil-leader/set-key
-  "," 'evil-repeat-find-char-reverse
-  "a" 'avy-goto-char-2
-  "C" 'ispell-word
-  "." 'switch-to-previous-buffer
-  "g" 'magit-status
-  "x" 'helm-M-x
-  "b" 'helm-mini
-  "F" 'helm-imenu
-  "f" 'helm-find
-  "o" 'delete-other-windows
-  "O" 'other-window
-  "s" 'ag-project
-  "S" 'delete-trailing-whitespace
-  "q" 'save-buffers-kill-terminal
-  "e" 'eval-last-sexp
-  "w" 'save-buffer)
+  ","  'evil-repeat-find-char-reverse
+  "."  'switch-to-previous-buffer
+  "a"  'avy-goto-char-2
+  "b"  'helm-mini
+  "C"  'ispell-word
+  "d"  'delete-other-windows
+  "D"  'delete-all-other-buffers
+  "e"  'eval-last-sexp
+  "F"  'helm-imenu
+  "f"  'helm-find
+  "g"  'magit-status
+  "nt" 'neotree-toggle
+  "O"  'other-window
+  "q"  'save-buffers-kill-terminal
+  "s"  'ag-project
+  "S"  'delete-trailing-whitespace
+  "w"  'save-buffer
+  "x"  'helm-M-x)
 
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
@@ -40,7 +42,7 @@
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 
-(defun kill-other-buffers ()
+(defun delete-all-other-buffers ()
   "Kill all other buffers"
   (interactive) (dolist (buffer (buffer-list))
                   (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))

@@ -1,25 +1,52 @@
-(require-package 'dired+)
-(require-package 'dired-sort)
+;;; My folder tree explorer
 
-(setq-default diredp-hide-details-initially-flag nil
-              dired-dwim-target t)
+(require-package 'neotree)
+(require-package 'projectile)
+(require-package 'helm-projectile)
 
-;; Prefer g-prefixed coreutils version of standard utilities when available
-(let ((gls (executable-find "gls")))
-  (when gls (setq insert-directory-program gls)))
+(require 'neotree)
+(require 'evil)
+(require 'dired)
 
-(after-load 'dired
-  (require 'dired+)
-  (require 'dired-sort)
-  (when (fboundp 'global-dired-hide-details-mode)
-    (global-dired-hide-details-mode -1))
-  (setq dired-recursive-deletes 'top)
-  (define-key dired-mode-map [mouse-2] 'dired-find-file)
-  (add-hook 'dired-mode-hook
-            (lambda () (guide-key/add-local-guide-key-sequence "%"))))
+(defun neotree-copy-file ()
+  (interactive)
+  (let* ((current-path (neo-buffer--get-filename-current-line))
+         (msg (format "Copy [%s] to: "
+                      (neo-path--file-short-name current-path)))
+         (to-path (read-file-name msg (file-name-directory current-path))))
+    (dired-copy-file current-path to-path t))
+  (neo-buffer--refresh t))
 
-(when (maybe-require-package 'diff-hl)
-  (after-load 'dired
-    (add-hook 'dired-mode-hook 'diff-hl-dired-mode)))
+(define-minor-mode neotree-evil
+  "Use NERDTree bindings on neotree."
+  :lighter " NT"
+  :keymap (progn
+            (evil-make-overriding-map neotree-mode-map 'normal t)
+            (evil-define-key 'normal neotree-mode-map
+              "C" 'neotree-change-root
+              "U" 'neotree-select-up-node
+              "r" 'neotree-refresh
+              "o" 'neotree-enter
+              (kbd "<return>") 'neotree-enter
+              "i" 'neotree-enter-horizontal-split
+              "s" 'neotree-enter-vertical-split
+              "n" 'evil-search-next
+              "N" 'evil-search-previous
+              "ma" 'neotree-create-node
+              "mc" 'neotree-copy-file
+              "md" 'neotree-delete-node
+              "mm" 'neotree-rename-node
+              "gg" 'evil-goto-first-line
+              "gi" (lambda ()
+                     (interactive)
+                     (if (string= pe/get-directory-tree-external-command
+                                  nt/gitignore-files-cmd)
+                         (progn (setq pe/get-directory-tree-external-command
+                                      nt/all-files-cmd))
+                       (progn (setq pe/get-directory-tree-external-command
+                                    nt/gitignore-files-cmd)))
+                     (nt/refresh)))
+            neotree-mode-map))
 
-(provide 'init-dired)
+  (setq neo-hidden-files-regexp "^\\.\\|~$\\|^#.*#$\\|^target$\\|^pom\\.*")
+  (provide 'init-dired)
