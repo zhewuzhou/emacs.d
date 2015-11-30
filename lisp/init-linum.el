@@ -1,7 +1,5 @@
 ;;; init-linum.el --- Stuff for line numbers.
-;;; Commentary:
-;;; Code:
-(global-linum-mode t)
+
 (defface linum-current
   '((t (:inherit linum :weight bold :underline "#555")))
   "The current line number.")
@@ -30,11 +28,14 @@
     ad-do-it))
 (ad-activate 'linum-update)
 
+;;; This is the actual line number format definition.
+(setq linum-format 'my-linum-relative-line-numbers)
+
 ;;; Set up relative line numbering to mimic `:set number relativenumber`.
 (add-hook 'linum-before-numbering-hook 'my-linum-get-format-string)
 
-;;; This is the actual line number format definition.
-(setq linum-format 'my-linum-relative-line-numbers)
+(when (require 'init-linum-off)
+  (add-hook 'after-change-major-mode-hook 'linum-on))
 
 (provide 'init-linum)
 ;;; init-linum.el ends here
