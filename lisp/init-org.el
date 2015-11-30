@@ -1,5 +1,6 @@
 ;;; init-org.el org plus evil
 
+(require-package 'org-pomodoro)
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 (setq org-agenda-files (quote ("~/Dropbox/org"
@@ -19,6 +20,7 @@
             (interactive)
             (org-insert-property-drawer))
     "d"  'org-deadline
+    "P"  'org-pomodoro
     "s"  'org-schedule
     "a"  'org-agenda
     "ns" 'org-narrow-to-subtree
@@ -61,7 +63,7 @@
                             (:endgroup)
                             ("BLOCKED" . ?b)
                             ("REVIEW" . ?r)
-                            ("PERSONAL" . ?P)
+                            ("PERSONAL" . ?p)
                             ("WORK" . ?W)
                             ("PRODUCTIVE" . ?P)
                             ("RESEARCH" . ?R)
@@ -72,6 +74,8 @@
                             ("CODING" . ?C)
                             ("BLOG" . ?B)
                             ("ORG" . ?O)
+                            ("EMACS" . ?E)
+                            ("INFLUENCE" . ?I)
                             ("NORANG" . ?N)
                             ("CANCELLED" . ?c))))
 

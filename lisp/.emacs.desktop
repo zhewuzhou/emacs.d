@@ -1,0 +1,54 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Nov 30 13:15:48 2015
+;; Desktop file format version 206
+;; Emacs version 24.5.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (22107 48996 468534 0) (desktop . "206") "zwzhou@jojo.local" nil nil ((((tty-type . "xterm-256color") (tty . "/dev/tty") (display-type . color) (background-mode . light) (foreground-color . "#657b83") (cursor-color . "#586e75") (tool-bar-lines . 0) (vertical-scroll-bars) (background-color . "#fdf6e3") (border-color . "#eee8d5") (font . "tty") (height . 35) (width . 130) (modeline . t) (unsplittable) (menu-bar-lines . 1) (internal-border-width . 0) (frameset--id . "5945-300F-CDD8-9773") (frameset--mini t) (minibuffer . t)) ((min-height . 4) (min-width . 10) (min-height-ignore . 2) (min-width-ignore . 2) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 4) (min-pixel-width . 10) (min-pixel-height-ignore . 2) (min-pixel-width-ignore . 2) (min-pixel-height-safe . 1) (min-pixel-width-safe . 2)) leaf (pixel-width . 130) (pixel-height . 33) (total-width . 130) (total-height . 33) (normal-height . 1.0) (normal-width . 1.0) (buffer "init-org.el" (selected . t) (hscroll . 0) (fringes 0 0 nil) (margins 5) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 657) (start . 1))))])
+(setq comint-input-ring nil)
+(setq compile-history nil)
+(setq desktop-missing-file-warning nil)
+(setq dired-regexp-history nil)
+(setq extended-command-history '("kill-other-buffers" "org-agenda" "org-refile" "org-refile-goto-last-stored" "org-capture" "helm-org-capture-templates" "eval-buffer" "org-move-subtree-up" "org-up-element" "org-move-item-down" "org-set-tags-command" "flyspell-mode" "org-set-tags" "org-todo" "orgstruct++-mode" "org-footnote-new" "org-insert-drawer" "ispell-buffer" "repeat" "org-move-item-up" "org-sparse-tree" "org-insert-todo-heading" "ispell-word" "org-insert-subheading" "org-store-link" "org-version" "remember" "shell" "ag"))
+(setq face-name-history nil)
+(setq file-name-history '("~/.emacs.d/lisp/init-org.el" "~/.emacs.d/lisp/init-org-capture.el" "~/Dropbox/org/refile.org" "~/Personal/project.org" "~/Personal/organizer.org" "~/.emacs.d/.git/COMMIT_EDITMSG" "~/Dropbox/org/abc.org" "~/.emacs.d/.bookmarks.el" "/tmp/abc.org" "~/Dropbox/org/gtd.org" "~/Dropbox/org/templates/default-template.org" "~/.emacs.d/init.el" "/tmp/find: /tmp/cvcd: Permission denied" "/tmp/bbb.org" "~/.emacs.d/misc/default-template.org" "/tmp/xxx.org" "~/.emacs.d/custom.el"))
+(setq grep-find-history nil)
+(setq grep-history nil)
+(setq minibuffer-history '("/Users/zwzhou/.emacs.d/lisp/" "init-org.el" "init-org" "project" "init-org-capture" "abc." "I" "****" "abc" "This" "task2" "hehe" "task1" "Task" "fix" "166" "Habit" "bh/verify-refile-target" "init-org-captu" "issue1" "it" "54" "November" "/Users/zwzhou/Dropbox/org/agenda/" "R" "" "Load" "xxxxxx.org" "/tmp/xxxx.org" "init-org" "Summary" "A " "init-me" "/Users/zwzhou/.emacs.d/lisp/init-linum" "helm" "/Users/zwzhou/.emacs.d/lisp/" "projectile" "init-linum" "init-sql" "init-github" "Compilation" "message" "/Users/zwzhou/.emacs.d/lisp/init" "mess" "require" "voucher" "language-Au" "todo" "**"))
+(setq org-refile-history '("This is my template/task3/ (abc.org)" "I have to fix it somehow otherwise I will have trouble/ (refile.org)" "This is my template/WAITING task1/this is the shit too" "This is my template/WAITING task1/this is the shit too/" "~/abc" "Task/fix issue1" "Task/fix issue1/" "I should be Ok/this would be nice/" "I should be Ok/" "Task" "Task/" "~/xxxx"))
+(setq query-replace-history nil)
+(setq read-expression-history nil)
+(setq regexp-history nil)
+(setq regexp-search-ring '("init-org.el" "misc" "\\<#\\>" "\\<\\*\\*\\>" "branch" "OffersAppIOSCI"))
+(setq register-alist '((48 . "    \"d\"  'org-deadline\n")))
+(setq search-ring nil)
+(setq shell-command-history nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/Users/zwzhou/.emacs.d/lisp/init-org.el"
+  "init-org.el"
+  'emacs-lisp-mode
+  '(anzu-mode helm-mode global-auto-revert-mode undo-tree-mode page-break-lines-mode whole-line-or-region-mode hes-mode guide-key-mode whitespace-cleanup-mode auto-compile-mode auto-compile-on-load-mode yas-minor-mode company-mode linum-mode flycheck-mode goto-address-prog-mode flyspell-mode paredit-mode bug-reference-prog-mode diff-hl-mode highlight-symbol-mode highlight-quoted-mode rainbow-delimiters-mode aggressive-indent-mode eldoc-mode redshank-mode elisp-slime-nav-mode)
+  657
+  '(3475 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . prefer-utf-8-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/Users/zwzhou/.emacs.d/lisp/init-org-capture.el"
+  "init-org-capture.el"
+  'emacs-lisp-mode
+  '(anzu-mode helm-mode global-auto-revert-mode undo-tree-mode page-break-lines-mode whole-line-or-region-mode hes-mode guide-key-mode whitespace-cleanup-mode auto-compile-mode auto-compile-on-load-mode yas-minor-mode company-mode linum-mode flycheck-mode goto-address-prog-mode flyspell-mode paredit-mode bug-reference-prog-mode diff-hl-mode highlight-symbol-mode highlight-quoted-mode rainbow-delimiters-mode aggressive-indent-mode eldoc-mode redshank-mode elisp-slime-nav-mode)
+  1
+  '(2468 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . prefer-utf-8-unix) (overwrite-mode)))
+
