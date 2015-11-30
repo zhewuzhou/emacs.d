@@ -17,7 +17,7 @@
 (setq evil-leader/in-all-states t)
 (evil-leader/set-key
   "," 'evil-repeat-find-char-reverse
-  "c" 'avy-goto-char-2
+  "a" 'avy-goto-char-2
   "C" 'ispell-word
   "." 'switch-to-previous-buffer
   "g" 'magit-status

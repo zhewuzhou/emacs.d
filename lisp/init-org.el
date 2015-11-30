@@ -22,7 +22,7 @@
     "d"  'org-deadline
     "P"  'org-pomodoro
     "s"  'org-schedule
-    "a"  'org-agenda
+    "A"  'org-agenda
     "ns" 'org-narrow-to-subtree
     "$"  'org-archive-subtree)
 
