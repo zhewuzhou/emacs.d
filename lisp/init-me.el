@@ -27,11 +27,11 @@
   "e"  'eval-last-sexp
   "f"  'helm-projectile-find-file
   "F"  'helm-find
-  "g"  'magit-status
+  "g"  'helm-projectile-ag
+  "m"  'magit-status
   "nt" 'neotree-toggle
   "O"  'other-window
   "q"  'save-buffers-kill-terminal
-  "s"  'ag-project
   "S"  'delete-trailing-whitespace
   "w"  'save-buffer
   "x"  'helm-M-x)

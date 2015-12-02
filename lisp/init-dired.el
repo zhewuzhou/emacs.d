@@ -2,11 +2,16 @@
 
 (require-package 'neotree)
 (require-package 'projectile)
+(require-package 'helm-ag)
 (require-package 'helm-projectile)
 
 (require 'neotree)
 (require 'evil)
 (require 'dired)
+
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
 
 (defun neotree-copy-file ()
   (interactive)
