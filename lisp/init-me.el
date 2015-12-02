@@ -16,6 +16,7 @@
 (evil-mode 1)
 (setq evil-leader/in-all-states t)
 (evil-leader/set-key
+  ;;; don't use o, because it's the namespace of org
   ","  'evil-repeat-find-char-reverse
   "."  'switch-to-previous-buffer
   "a"  'avy-goto-char-2

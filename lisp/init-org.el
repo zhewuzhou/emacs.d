@@ -11,20 +11,17 @@
            (maybe-require-package 'evil))
 
   (evil-leader/set-key-for-mode 'org-mode
-    "I"  'org-time-stamp-inactive
-    "c"  'org-capture
-    "S"  'org-time-stamp
-    "t"  'org-set-tags-command
-    "T"  'org-todo
-    "p"  '(lambda ()
+    "oa"  'org-agenda
+    "oc"  'org-capture
+    "od"  'org-deadline
+    "on"  'org-narrow-to-subtree
+    "oi"  '(lambda ()
             (interactive)
             (org-insert-property-drawer))
-    "d"  'org-deadline
-    "P"  'org-pomodoro
-    "s"  'org-schedule
-    "A"  'org-agenda
-    "ns" 'org-narrow-to-subtree
-    "$"  'org-archive-subtree)
+    "op"  'org-pomodoro
+    "os"  'org-set-tags-command
+    "ot"  'org-todo
+    "o$"  'org-archive-subtree)
 
   (evil-define-key 'normal org-mode-map (kbd "C-<") 'org-metaleft)
   (evil-define-key 'normal org-mode-map (kbd "C->") 'org-metaright)
