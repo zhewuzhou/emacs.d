@@ -6,6 +6,7 @@
 (require-package 'company)
 (require-package 'helm-c-yasnippet)
 (require-package 'emmet-mode)
+(require-package 'web-beautify)
 
 ;;;====================EVIL====================
 (require 'evil-leader)
@@ -76,6 +77,30 @@
 (evil-define-key 'insert emmet-mode-keymap (kbd "C-y") 'emmet-expand-line)
 (evil-define-key 'insert emmet-mode-keymap (kbd "C-n") 'emmet-next-edit-point)
 (evil-define-key 'insert emmet-mode-keymap (kbd "C-p") 'emmet-prev-edit-point)
+
+;;;====================WEB-BEAUTIFY====================
+(require 'web-beautify)
+(eval-after-load 'js2-mode
+                 '(add-hook 'js2-mode-hook
+                            (lambda ()
+                              (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
+(eval-after-load 'js
+                 '(add-hook 'js-mode-hook
+                            (lambda ()
+                              (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
+(eval-after-load 'json-mode
+                 '(add-hook 'json-mode-hook
+                            (lambda ()
+                              (add-hook 'before-save-hook 'web-beautify-js-buffer t t))))
+(eval-after-load 'sgml-mode
+                 '(add-hook 'html-mode-hook
+                            (lambda ()
+                              (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
+(eval-after-load 'css-mode
+                 '(add-hook 'css-mode-hook
+                            (lambda ()
+                              (add-hook 'before-save-hook 'web-beautify-css-buffer t t))))
+
 ;;;====================LOAD-MY-BASH-CONFIG====================
 (setq explicit-bash-args '("--login" "--init-file" "~/.bashrc" "-i"))
 
