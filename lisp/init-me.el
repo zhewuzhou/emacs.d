@@ -4,6 +4,7 @@
 (require-package 'avy)
 (require-package 'yasnippet)
 (require-package 'company)
+(require-package 'helm-c-yasnippet)
 
 ;;;====================EVIL====================
 (require 'evil-leader)
@@ -34,7 +35,9 @@
   "q"  'save-buffers-kill-terminal
   "S"  'delete-trailing-whitespace
   "w"  'save-buffer
-  "x"  'helm-M-x)
+  "x"  'helm-M-x
+  "y"  'helm-yas-complete
+  "Y"  'helm-yas-create-snippet-on-region)
 
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
@@ -53,6 +56,8 @@
 (require 'yasnippet)
 (setq yas-snippets-dir "~/.emacs.d/snippets")
 (yas-global-mode 1)
+(require 'helm-c-yasnippet)
+(setq helm-yas-space-match-any-greedy t)
 
 ;;;====================COMPANY====================
 (require 'company)
