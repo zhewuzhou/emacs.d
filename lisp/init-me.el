@@ -5,6 +5,7 @@
 (require-package 'yasnippet)
 (require-package 'company)
 (require-package 'helm-c-yasnippet)
+(require-package 'emmet-mode)
 
 ;;;====================EVIL====================
 (require 'evil-leader)
@@ -68,6 +69,13 @@
                       (define-key company-active-map (kbd "C-n") #'company-select-next)
                       (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
+;;;====================EMMET-MODE====================
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(evil-define-key 'insert emmet-mode-keymap (kbd "C-y") 'emmet-expand-line)
+(evil-define-key 'insert emmet-mode-keymap (kbd "C-n") 'emmet-next-edit-point)
+(evil-define-key 'insert emmet-mode-keymap (kbd "C-p") 'emmet-prev-edit-point)
 ;;;====================LOAD-MY-BASH-CONFIG====================
 (setq explicit-bash-args '("--login" "--init-file" "~/.bashrc" "-i"))
 
