@@ -51,6 +51,7 @@
 
 ;;;====================YAS====================
 (require 'yasnippet)
+(setq yas-snippets-dir "~/.emacs.d/snippets")
 (yas-global-mode 1)
 
 ;;;====================COMPANY====================
