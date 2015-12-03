@@ -23,6 +23,7 @@
   ","  'evil-repeat-find-char-reverse
   "."  'switch-to-previous-buffer
   "a"  'avy-goto-char-2
+  "A"  'helm-apropos
   "b"  'helm-mini
   "C"  'ispell-word
   "d"  'delete-other-windows
