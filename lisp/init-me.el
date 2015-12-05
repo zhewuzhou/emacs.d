@@ -36,6 +36,7 @@
   "nt" 'neotree-toggle
   "O"  'other-window
   "q"  'save-buffers-kill-terminal
+  "r"  'split-window-right
   "S"  'delete-trailing-whitespace
   "w"  'save-buffer
   "x"  'helm-M-x
