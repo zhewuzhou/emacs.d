@@ -6,36 +6,36 @@
 (setq org-agenda-files (quote ("~/Dropbox/org"
                                "~/Personal")))
 
-(when (and (maybe-require-package 'org)
-           (maybe-require-package 'evil-leader)
-           (maybe-require-package 'evil))
+(require 'org)
+(require 'evil-leader)
+(require 'evil)
 
-  (evil-leader/set-key-for-mode 'org-mode
-    "oa"  'org-agenda
-    "oc"  'org-capture
-    "od"  'org-deadline
-    "on"  'org-narrow-to-subtree
-    "oi"  '(lambda ()
-            (interactive)
-            (org-insert-property-drawer))
-    "op"  'org-pomodoro
-    "os"  'org-set-tags-command
-    "ot"  'org-todo
-    "o$"  'org-archive-subtree)
+(evil-leader/set-key-for-mode 'org-mode
+                              "oa"  'org-agenda
+                              "oc"  'org-capture
+                              "od"  'org-deadline
+                              "on"  'org-narrow-to-subtree
+                              "oi"  '(lambda ()
+                                       (interactive)
+                                       (org-insert-property-drawer))
+                              "op"  'org-pomodoro
+                              "os"  'org-set-tags-command
+                              "ot"  'org-todo
+                              "o$"  'org-archive-subtree)
 
-  (evil-define-key 'normal org-mode-map (kbd "C-<") 'org-metaleft)
-  (evil-define-key 'normal org-mode-map (kbd "C->") 'org-metaright)
-  (evil-define-key 'insert org-mode-map (kbd "C-<") 'org-metaleft)
-  (evil-define-key 'insert org-mode-map (kbd "C->") 'org-metaright)
+(evil-define-key 'normal org-mode-map (kbd "C-<") 'org-metaleft)
+(evil-define-key 'normal org-mode-map (kbd "C->") 'org-metaright)
+(evil-define-key 'insert org-mode-map (kbd "C-<") 'org-metaleft)
+(evil-define-key 'insert org-mode-map (kbd "C->") 'org-metaright)
 
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (define-key org-mode-map (kbd "C-c ,") 'org-time-stamp-inactive)
-              (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-              (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
-              (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
-              (auto-fill-mode)
-              (flyspell-mode))))
+(add-hook 'org-mode-hook
+          (lambda ()
+            (define-key org-mode-map (kbd "C-c ,") 'org-time-stamp-inactive)
+            (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
+            (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
+            (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
+            (auto-fill-mode)
+            (flyspell-mode)))
 
 ;;; states and faces
 (setq org-todo-keywords
