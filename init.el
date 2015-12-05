@@ -100,6 +100,7 @@
 (require 'init-lisp)
 (require 'init-slime)
 (require 'init-common-lisp)
+(require 'init-scheme)
 
 ; org stuff
 (require 'init-org)
