@@ -102,6 +102,8 @@
 (require 'init-common-lisp)
 (require 'init-scheme)
 
+(require 'init-r)
+
 ; org stuff
 (require 'init-org)
 (require 'init-org-capture)
