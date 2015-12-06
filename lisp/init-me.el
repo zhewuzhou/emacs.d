@@ -28,7 +28,6 @@
   "C"  'ispell-word
   "d"  'delete-other-windows
   "D"  'delete-all-other-buffers
-  "e"  'eval-last-sexp
   "f"  'helm-projectile-find-file
   "F"  'helm-find
   "g"  'helm-projectile-ag
