@@ -103,6 +103,7 @@
 (require 'init-scheme)
 
 (require 'init-r)
+(require 'init-go)
 
 ; org stuff
 (require 'init-org)
