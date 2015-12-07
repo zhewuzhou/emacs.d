@@ -7,15 +7,17 @@
 (require-package 'helm-c-yasnippet)
 (require-package 'emmet-mode)
 (require-package 'web-beautify)
+(require-package 'evil-matchit)
 
 ;;;====================EVIL====================
 (require 'evil-leader)
-(evil-mode nil)
 (require 'evil-leader)
 (require 'evil)
+(require 'evil-matchit)
+
 (evil-leader/set-leader ",")
-(evil-mode nil)
 (global-evil-leader-mode 1)
+(global-evil-matchit-mode 1)
 (evil-mode 1)
 (setq evil-leader/in-all-states t)
 (evil-leader/set-key
