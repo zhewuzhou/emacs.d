@@ -8,6 +8,7 @@
 (require-package 'emmet-mode)
 (require-package 'web-beautify)
 (require-package 'evil-matchit)
+(require-package 'rainbow-delimiters)
 
 ;;;====================EVIL====================
 (require 'evil-leader)
@@ -100,9 +101,12 @@
                             (lambda ()
                               (add-hook 'before-save-hook 'web-beautify-html-buffer t t))))
 (eval-after-load 'css-mode
-                 '(add-hook 'css-mode-hook
-                            (lambda ()
-                              (add-hook 'before-save-hook 'web-beautify-css-buffer t t))))
+  '(add-hook 'css-mode-hook
+             (lambda ()
+               (add-hook 'before-save-hook 'web-beautify-css-buffer t t))))
+
+;;;====================RAINBOW-DELIMITERS====================
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;;;====================LOAD-MY-BASH-CONFIG====================
 (setq explicit-bash-args '("--login" "--init-file" "~/.bashrc" "-i"))

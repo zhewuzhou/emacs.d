@@ -43,14 +43,7 @@
 
 ;; js-mode
 (setq-default js-indent-level preferred-javascript-indent-level)
-
 (add-to-list 'interpreter-mode-alist (cons "node" preferred-javascript-mode))
-
-;; Javascript nests {} and () a lot, so I find this helpful
-
-(require-package 'rainbow-delimiters)
-(dolist (hook '(js2-mode-hook js-mode-hook json-mode-hook))
-  (add-hook hook 'rainbow-delimiters-mode))
 
 ;; ---------------------------------------------------------------------------
 ;; Run and interact with an inferior JS via js-comint.el

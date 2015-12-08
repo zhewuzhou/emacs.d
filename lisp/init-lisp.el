@@ -153,7 +153,6 @@
 ;; ----------------------------------------------------------------------------
 ;; Enable desired features for all lisp modes
 ;; ----------------------------------------------------------------------------
-(require-package 'rainbow-delimiters)
 (require-package 'redshank)
 (after-load 'redshank
   (diminish 'redshank-mode))
@@ -162,7 +161,6 @@
 
 (defun sanityinc/lisp-setup ()
   "Enable features useful in any Lisp mode."
-  (rainbow-delimiters-mode t)
   (enable-paredit-mode)
   (when (fboundp 'aggressive-indent-mode)
     (aggressive-indent-mode))
