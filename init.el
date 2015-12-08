@@ -43,6 +43,9 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
+;; Init evil stuff
+(require 'init-me)
+
 (require-package 'wgrep)
 (require-package 'project-local-variables)
 (require-package 'diminish)
@@ -160,7 +163,6 @@
             (message "init completed in %.2fms"
                      (sanityinc/time-subtract-millis after-init-time before-init-time))))
 
-(require 'init-me)
 (require 'init-linum)
 
 (provide 'init)
