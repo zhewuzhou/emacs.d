@@ -1,6 +1,5 @@
 (maybe-require-package 'json-mode)
 (maybe-require-package 'js2-mode)
-(maybe-require-package 'coffee-mode)
 (require-package 'js-comint)
 
 (defcustom preferred-javascript-mode
@@ -22,7 +21,6 @@
 
 
 ;; js2-mode
-
 ;; Change some defaults: customize them to override
 (setq-default js2-basic-offset 2
               js2-bounce-indent-p nil)
@@ -46,26 +44,13 @@
 ;; js-mode
 (setq-default js-indent-level preferred-javascript-indent-level)
 
-
 (add-to-list 'interpreter-mode-alist (cons "node" preferred-javascript-mode))
 
-
 ;; Javascript nests {} and () a lot, so I find this helpful
 
 (require-package 'rainbow-delimiters)
 (dolist (hook '(js2-mode-hook js-mode-hook json-mode-hook))
   (add-hook hook 'rainbow-delimiters-mode))
-
-
-
-;;; Coffeescript
-
-(after-load 'coffee-mode
-  (setq coffee-js-mode preferred-javascript-mode
-        coffee-tab-width preferred-javascript-indent-level))
-
-(when (fboundp 'coffee-mode)
-  (add-to-list 'auto-mode-alist '("\\.coffee\\.erb\\'" . coffee-mode)))
 
 ;; ---------------------------------------------------------------------------
 ;; Run and interact with an inferior JS via js-comint.el
