@@ -11,17 +11,18 @@
 (require 'evil)
 
 (evil-leader/set-key-for-mode 'org-mode
-                              "oa"  'org-agenda
-                              "oc"  'org-capture
-                              "od"  'org-deadline
-                              "on"  'org-narrow-to-subtree
-                              "oi"  '(lambda ()
-                                       (interactive)
-                                       (org-insert-property-drawer))
-                              "op"  'org-pomodoro
-                              "os"  'org-set-tags-command
-                              "ot"  'org-todo
-                              "o$"  'org-archive-subtree)
+  "oa"  'org-agenda
+  "oc"  'org-capture
+  "od"  'org-deadline
+  "on"  'org-narrow-to-subtree
+  "oi"  '(lambda ()
+           (interactive)
+           (org-insert-property-drawer))
+  "oo"  'org-open-at-point
+  "op"  'org-pomodoro
+  "os"  'org-set-tags-command
+  "ot"  'org-todo
+  "o$"  'org-archive-subtree)
 
 (evil-define-key 'normal org-mode-map (kbd "C-<") 'org-metaleft)
 (evil-define-key 'normal org-mode-map (kbd "C->") 'org-metaright)
