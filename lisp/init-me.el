@@ -1,26 +1,26 @@
 ;; This is a place to put my own stuff
 (require-package 'evil)
 (require-package 'evil-leader)
+(require-package 'evil-matchit)
+(require-package 'evil-surround)
 (require-package 'avy)
 (require-package 'yasnippet)
 (require-package 'company)
 (require-package 'helm-c-yasnippet)
 (require-package 'emmet-mode)
 (require-package 'web-beautify)
-(require-package 'evil-matchit)
 (require-package 'rainbow-delimiters)
 
 ;;;====================EVIL====================
-(require 'evil-leader)
-(require 'evil-leader)
 (require 'evil)
+(require 'evil-leader)
 (require 'evil-matchit)
+(require 'evil-surround)
 
 (evil-leader/set-leader ",")
 (global-evil-leader-mode 1)
-(global-evil-matchit-mode 1)
-(evil-mode 1)
 (setq evil-leader/in-all-states t)
+(global-evil-surround-mode 1)
 (evil-leader/set-key
   ;;; don't use o, because it's the namespace of org
   ","  'evil-repeat-find-char-reverse
@@ -44,6 +44,9 @@
   "x"  'helm-M-x
   "y"  'helm-yas-complete
   "Y"  'helm-yas-create-snippet-on-region)
+
+(global-evil-matchit-mode 1)
+(evil-mode 1)
 
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
