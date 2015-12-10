@@ -111,6 +111,7 @@
 ; org stuff
 (require 'init-org)
 (require 'init-org-capture)
+(require 'init-org-agenda)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
