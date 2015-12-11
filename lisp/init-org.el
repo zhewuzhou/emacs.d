@@ -20,7 +20,6 @@
            (org-insert-property-drawer))
   "oo"  'org-open-at-point
   "ol"  'org-insert-link
-  "om"  'org-md-export-to-markdown
   "op"  'org-pomodoro
   "os"  'org-set-tags-command
   "ot"  'org-todo
