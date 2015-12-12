@@ -4,7 +4,7 @@
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 (setq org-agenda-files (quote ("~/Dropbox/org"
-                               "~/Personal")))
+                               "~/my-gtd")))
 
 (require 'org)
 (require 'evil-leader)
