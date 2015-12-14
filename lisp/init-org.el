@@ -76,6 +76,7 @@
                             ("EMACS" . ?E)
                             ("INFLUENCE" . ?I)
                             ("NORANG" . ?N)
+                            ("PROJECT" . ?w)
                             ("CANCELLED" . ?c))))
 
 ; Allow setting single tags without the menu
