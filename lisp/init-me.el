@@ -61,6 +61,25 @@
                   (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
                     (kill-buffer buffer))))
 
+;;;====================DIMINISH====================
+(after-load 'flycheck
+            (diminish 'flycheck-mode))
+
+(after-load 'flyspell
+            (diminish 'flyspell-mode))
+
+(after-load 'projectile
+            (diminish 'projectile-mode))
+
+(after-load 'company
+            (diminish 'company-mode))
+
+(after-load 'yasnippet
+            (diminish 'yas-minor-mode))
+
+(after-load 'helm-mode
+            (diminish 'helm-mode))
+
 ;;;====================YAS====================
 (require 'yasnippet)
 (setq yas-snippets-dir "~/.emacs.d/snippets")

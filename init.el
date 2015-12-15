@@ -42,15 +42,14 @@
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
-
-;; Init evil stuff
-(require 'init-me)
-
 (require-package 'wgrep)
 (require-package 'project-local-variables)
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'mwe-log-commands)
+
+;; Init evil stuff
+(require 'init-me)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
