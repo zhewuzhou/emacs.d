@@ -1,1 +1,5 @@
-Edit multiple file seems not handy, fix it somehow.
+* My Emacs to do list
+** TODO Edit multiple file seems not handy, fix it somehow.           :EMACS:
+   DEADLINE: <2015-12-30 Wed>
+** TODO Emacs configuration as org document                           :EMACS:
+   DEADLINE: <2016-01-15 Fri>
