@@ -83,6 +83,9 @@
 (after-load 'ess
             (diminish 'auto-fill-function))
 
+(after-load 'whitespace-cleanup-mode
+            (diminish 'whitespace-cleanup-mode))
+
 ;;;====================YAS====================
 (require 'yasnippet)
 (setq yas-snippets-dir "~/.emacs.d/snippets")
