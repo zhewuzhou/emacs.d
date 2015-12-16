@@ -80,6 +80,9 @@
 (after-load 'helm-mode
             (diminish 'helm-mode))
 
+(after-load 'ess
+            (diminish 'auto-fill-function))
+
 ;;;====================YAS====================
 (require 'yasnippet)
 (setq yas-snippets-dir "~/.emacs.d/snippets")
