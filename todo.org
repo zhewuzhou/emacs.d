@@ -1,0 +1,1 @@
+Edit multiple file seems not handy, fix it somehow.
