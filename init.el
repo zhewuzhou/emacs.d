@@ -75,11 +75,6 @@
 (require 'init-whitespace)
 (require 'init-fci)
 
-(require 'init-vc)
-(require 'init-darcs)
-(require 'init-git)
-(require 'init-github)
-
 (require 'init-compile)
 (require 'init-crontab)
 (require 'init-textile)
