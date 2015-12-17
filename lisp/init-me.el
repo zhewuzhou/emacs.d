@@ -140,4 +140,8 @@
 ;;;====================LOAD-MY-BASH-CONFIG====================
 (setq explicit-bash-args '("--login" "--init-file" "~/.bashrc" "-i"))
 
+;;;====================COMMON====================
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
 (provide 'init-me)
