@@ -12,6 +12,7 @@
 (require-package 'rainbow-delimiters)
 
 ;;;====================EVIL====================
+(setq evil-want-C-i-jump nil)
 (require 'evil)
 (require 'evil-leader)
 (require 'evil-matchit)
