@@ -3,3 +3,5 @@
    DEADLINE: <2015-12-30 Wed>
 ** TODO Emacs configuration as org document                           :EMACS:
    DEADLINE: <2016-01-15 Fri>
+** TODO clean up the configuration                                    :EMACS:
+   DEADLINE: <2015-12-23 Wed>
