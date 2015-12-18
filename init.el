@@ -90,7 +90,6 @@
 (require 'init-python-mode)
 (require 'init-haskell)
 (require 'init-elm)
-(require 'init-rails)
 (require 'init-sql)
 
 (require 'init-paredit)
