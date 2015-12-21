@@ -1,6 +1,7 @@
 ;;; init-org.el org plus evil
 
 (require-package 'org-pomodoro)
+
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 (setq org-agenda-files (quote ("~/Dropbox/org"
@@ -25,17 +26,36 @@
   "ot"  'org-todo
   "o$"  'org-archive-subtree)
 
-(evil-define-key 'normal org-mode-map (kbd "C-<") 'org-metaleft)
-(evil-define-key 'normal org-mode-map (kbd "C->") 'org-metaright)
-(evil-define-key 'insert org-mode-map (kbd "C-<") 'org-metaleft)
-(evil-define-key 'insert org-mode-map (kbd "C->") 'org-metaright)
+
+(defun my/org-insert-scheduled-heading ()
+  "Insert a new org heading scheduled for today."
+  (interactive)
+  (call-interactively 'org-insert-todo-heading)
+  (org-schedule nil (format-time-string "%Y-%m-%d")))
+
+(defun my/org-agenda-capture ()
+  (interactive)
+  (if (not (eq major-mode 'org-agenda-mode))
+      (user-error "You cannot do this outside of agenda buffers")
+    (let ((org-overriding-default-time (org-get-cursor-date)))
+      (org-capture nil "t"))))
+
+(add-hook 'org-agenda-mode-hook
+          (lambda ()
+            (define-key org-agenda-mode-map "n" 'my/org-agenda-capture)))
+
+(add-hook 'org-capture-mode-hook
+          (lambda ()
+            (evil-insert-state)))
 
 (add-hook 'org-mode-hook
           (lambda ()
             (define-key org-mode-map (kbd "C-c ,") 'org-time-stamp-inactive)
+            (define-key org-mode-map (kbd "C-c i") 'my/org-insert-scheduled-heading)
+            (define-key org-mode-map (kbd "C-c l") 'org-metaleft)
+            (define-key org-mode-map (kbd "C-c r") 'org-metaright)
+            (define-key org-mode-map (kbd "C-c I") 'org-insert-heading)
             (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-            (evil-define-key 'normal org-mode-map (kbd "C-\\") 'org-insert-heading)
-            (evil-define-key 'insert org-mode-map (kbd "C-\\") 'org-insert-heading)
             (auto-fill-mode)
             (flyspell-mode)))
 
@@ -79,10 +99,10 @@
                             ("PROJECT" . ?w)
                             ("CANCELLED" . ?c))))
 
-; Allow setting single tags without the menu
+;;; Allow setting single tags without the menu
 (setq org-fast-tag-selection-single-key (quote expert))
 
-; For tag searches ignore tasks with scheduled and deadline dates
+;;; For tag searches ignore tasks with scheduled and deadline dates
 (setq org-agenda-tags-todo-honor-ignore-options t)
 
 (provide 'init-org)
