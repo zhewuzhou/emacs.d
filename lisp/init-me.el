@@ -3,6 +3,7 @@
 (require-package 'evil-leader)
 (require-package 'evil-matchit)
 (require-package 'evil-surround)
+(require-package 'evil-nerd-commenter)
 (require-package 'avy)
 (require-package 'yasnippet)
 (require-package 'company)
@@ -29,6 +30,11 @@
   "a"  'avy-goto-char-2
   "A"  'helm-apropos
   "b"  'helm-mini
+  "ci" 'evilnc-comment-or-uncomment-lines'
+  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line'
+  "cp" 'evilnc-comment-or-uncomment-paragraphs
+  "cr" 'comment-or-uncomment-region
+  "cv" 'evilnc-toggle-invert-comment-line-by-line'
   "C"  'ispell-word
   "d"  'delete-other-windows
   "D"  'delete-all-other-buffers
