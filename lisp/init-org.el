@@ -51,10 +51,10 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (define-key org-mode-map (kbd "C-c ,") 'org-time-stamp-inactive)
-            (define-key org-mode-map (kbd "C-c i") 'my/org-insert-scheduled-heading)
+            (define-key org-mode-map (kbd "C-\\") 'my/org-insert-scheduled-heading)
+            (define-key org-mode-map (kbd "C-|") 'org-insert-heading)
             (define-key org-mode-map (kbd "C-c l") 'org-metaleft)
             (define-key org-mode-map (kbd "C-c r") 'org-metaright)
-            (define-key org-mode-map (kbd "C-c I") 'org-insert-heading)
             (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
             (auto-fill-mode)
             (flyspell-mode)))

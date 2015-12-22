@@ -39,7 +39,7 @@
   "d"  'delete-other-windows
   "D"  'delete-all-other-buffers
   "f"  'helm-projectile-find-file
-  "F"  'helm-find
+  "F"  'helm-find-files
   "g"  'helm-projectile-ag
   "m"  'magit-status
   "nt" 'neotree-toggle
