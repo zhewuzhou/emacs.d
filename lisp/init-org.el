@@ -26,24 +26,6 @@
   "ot"  'org-todo
   "o$"  'org-archive-subtree)
 
-
-(defun my/org-insert-scheduled-heading ()
-  "Insert a new org heading scheduled for today."
-  (interactive)
-  (call-interactively 'org-insert-todo-heading)
-  (org-schedule nil (format-time-string "%Y-%m-%d")))
-
-(defun my/org-agenda-capture ()
-  (interactive)
-  (if (not (eq major-mode 'org-agenda-mode))
-      (user-error "You cannot do this outside of agenda buffers")
-    (let ((org-overriding-default-time (org-get-cursor-date)))
-      (org-capture nil "t"))))
-
-(add-hook 'org-agenda-mode-hook
-          (lambda ()
-            (define-key org-agenda-mode-map "n" 'my/org-agenda-capture)))
-
 (add-hook 'org-capture-mode-hook
           (lambda ()
             (evil-insert-state)))
@@ -51,8 +33,7 @@
 (add-hook 'org-mode-hook
           (lambda ()
             (define-key org-mode-map (kbd "C-c ,") 'org-time-stamp-inactive)
-            (define-key org-mode-map (kbd "C-\\") 'my/org-insert-scheduled-heading)
-            (define-key org-mode-map (kbd "C-|") 'org-insert-heading)
+            (define-key org-mode-map (kbd "C-\\") 'org-insert-heading)
             (define-key org-mode-map (kbd "C-c l") 'org-metaleft)
             (define-key org-mode-map (kbd "C-c r") 'org-metaright)
             (evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
