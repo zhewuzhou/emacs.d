@@ -11,8 +11,13 @@
 (require 'evil-leader)
 (require 'evil)
 
+(defun my/org-archive-done-tasks ()
+  (interactive)
+  (org-map-entries 'org-archive-subtree "/DONE" 'file))
+
 (evil-leader/set-key-for-mode 'org-mode
   "oa"  'org-agenda
+  "oA"  'my/org-archive-done-tasks
   "oc"  'org-capture
   "od"  'org-deadline
   "on"  'org-narrow-to-subtree
