@@ -41,7 +41,7 @@
   "f"  'helm-projectile-find-file
   "F"  'helm-find-files
   "g"  'helm-projectile-ag
-  "m"  'magit-status
+  "m"  'markdown-preview
   "nt" 'neotree-toggle
   "O"  'other-window
   "q"  'save-buffers-kill-terminal

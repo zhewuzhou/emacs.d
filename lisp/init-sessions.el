@@ -46,7 +46,6 @@
                 (file-name-history        . 100)
                 (grep-find-history        . 30)
                 (grep-history             . 30)
-                (magit-read-rev-history   . 50)
                 (minibuffer-history       . 50)
                 (org-clock-history        . 50)
                 (org-refile-history       . 50)
