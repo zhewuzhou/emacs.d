@@ -66,6 +66,7 @@
                             ("@office" . ?o)
                             ("@home" . ?H)
                             (:endgroup)
+                            ("HABIT" . ?h)
                             ("BLOCKED" . ?b)
                             ("REVIEW" . ?r)
                             ("PERSONAL" . ?p)
