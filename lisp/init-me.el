@@ -104,10 +104,14 @@
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
-                      (define-key company-active-map (kbd "M-n") nil)
-                      (define-key company-active-map (kbd "M-p") nil)
-                      (define-key company-active-map (kbd "C-n") #'company-select-next)
-                      (define-key company-active-map (kbd "C-p") #'company-select-previous))
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
+; Make sure path company works
+(delete 'company-files company-backends)
+(add-to-list 'company-backends 'company-files)
 
 ;;;====================EMMET-MODE====================
 (require 'emmet-mode)
