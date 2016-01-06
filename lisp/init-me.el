@@ -47,6 +47,7 @@
   "q"  'save-buffers-kill-terminal
   "r"  'split-window-right
   "S"  'delete-trailing-whitespace
+  ;;; t is taken for helm-gtags
   "w"  'save-buffer
   "x"  'helm-M-x
   "y"  'helm-yas-complete

@@ -65,6 +65,7 @@
 
 (require 'init-recentf)
 (require 'init-helm)
+(require 'init-tags)
 (require 'init-hippie-expand)
 (require 'init-windows)
 (require 'init-sessions)
