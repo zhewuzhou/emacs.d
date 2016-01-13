@@ -106,6 +106,7 @@
 
 ;;;====================COMPANY====================
 (require 'company)
+(setq company-dabbrev-downcase nil)
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
   (define-key company-active-map (kbd "M-n") nil)
