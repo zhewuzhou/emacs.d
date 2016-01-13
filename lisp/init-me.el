@@ -4,6 +4,7 @@
 (require-package 'evil-matchit)
 (require-package 'evil-surround)
 (require-package 'evil-nerd-commenter)
+(require-package 'evil-jumper)
 (require-package 'avy)
 (require-package 'yasnippet)
 (require-package 'company)
@@ -23,6 +24,8 @@
 (global-evil-leader-mode 1)
 (setq evil-leader/in-all-states t)
 (global-evil-surround-mode 1)
+(setq evil-want-C-i-jump t)
+(evil-jumper-mode t)
 (evil-leader/set-key
   ;;; don't use o, because it's the namespace of org
   ","  'evil-repeat-find-char-reverse
