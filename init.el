@@ -159,6 +159,7 @@
 
 (require 'init-linum)
 (require 'init-input)
+(require 'init-common)
 
 (provide 'init)
 
