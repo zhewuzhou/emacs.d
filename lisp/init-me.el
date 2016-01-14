@@ -24,8 +24,8 @@
 (global-evil-leader-mode 1)
 (setq evil-leader/in-all-states t)
 (global-evil-surround-mode 1)
-(setq evil-want-C-i-jump t)
 (evil-jumper-mode t)
+(evil-define-key 'normal evil-jumper-mode-map (kbd "C-f") #'evil-jumper/forward)
 (evil-leader/set-key
   ;;; don't use o, because it's the namespace of org
   ","  'evil-repeat-find-char-reverse
