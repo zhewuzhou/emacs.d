@@ -9,7 +9,7 @@
 (global-set-key (kbd "C-c ;") 'pyim-toggle-full-width-punctuation)
 (setq pyim-dicts '((:name "default" :file "~/.emacs.d/pyim/dicts/pyim-bigdict.pyim" :coding utf-8-unix :dict-type pinyin-dict)))
 (setq-default pyim-english-input-switch-function
-                            'pyim-dynamic-english-input-function)
+                            'pyim-probe-dynamic-english)
 (setq pyim-dicts-manager-scel2pyim-command "/usr/local/bin/scel2pyim")
 (setq pyim-use-tooltip t)
 
