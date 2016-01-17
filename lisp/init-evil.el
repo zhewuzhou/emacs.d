@@ -66,4 +66,4 @@
                   (unless (or (eql buffer (current-buffer)) (not (buffer-file-name buffer)))
                     (kill-buffer buffer))))
 
-(provide 'init-me)
+(provide 'init-evil)

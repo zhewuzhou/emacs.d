@@ -49,7 +49,7 @@
 (require-package 'mwe-log-commands)
 
 ;; Init evil stuff
-(require 'init-me)
+(require 'init-evil)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
