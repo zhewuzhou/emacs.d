@@ -1,5 +1,6 @@
 ;; This is a place to config input stuff
 (require-package 'chinese-pyim)
+(require-package 'popup)
 (require 'pos-tip)
 
 (require 'chinese-pyim)
