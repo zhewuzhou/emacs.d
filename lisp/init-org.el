@@ -4,9 +4,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
-(setq org-agenda-files (quote ("~/Dropbox/org"
-                               "~/my-gtd")))
-
 (require 'org)
 (require 'evil-leader)
 (require 'evil)
@@ -91,6 +88,12 @@
 
 ;;; For tag searches ignore tasks with scheduled and deadline dates
 (setq org-agenda-tags-todo-honor-ignore-options t)
+
+;;; Set up agenda files location
+(setq org-agenda-files (quote ("~/Dropbox/org" "~/my-gtd")))
+
+;;; Set default options for open a org file as conent which not too details as well as not too brief
+(setq org-startup-folded 'content)
 
 (provide 'init-org)
 ;;; init-org.el ends here
