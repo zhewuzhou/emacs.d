@@ -46,6 +46,7 @@
   "S"  'delete-trailing-whitespace
   ;;; t is taken for helm-gtags
   "w"  'save-buffer
+  "W"  'save-some-buffers
   "x"  'helm-M-x
   "y"  'helm-yas-complete
   "Y"  'helm-yas-create-snippet-on-region)
