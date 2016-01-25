@@ -7,33 +7,107 @@
 
 ;;;====================DIMINISH====================
 (after-load 'flycheck
-  (diminish 'flycheck-mode))
+            (diminish 'flycheck-mode))
 
 (after-load 'flyspell
-  (diminish 'flyspell-mode))
+            (diminish 'flyspell-mode))
 
 (after-load 'projectile
-  (diminish 'projectile-mode))
+            (diminish 'projectile-mode))
 
 (after-load 'company
-  (diminish 'company-mode))
+            (diminish 'company-mode))
 
 (after-load 'yasnippet
-  (diminish 'yas-minor-mode))
+            (diminish 'yas-minor-mode))
 
 (after-load 'helm-mode
-  (diminish 'helm-mode))
+            (diminish 'helm-mode))
 
 (after-load 'ess
-  (diminish 'auto-fill-function))
+            (diminish 'auto-fill-function))
 
 (after-load 'whitespace-cleanup-mode
-  (diminish 'whitespace-cleanup-mode))
+            (diminish 'whitespace-cleanup-mode))
 
 ;;;====================YAS====================
 (require 'yasnippet)
 (setq yas-snippets-dir "~/.emacs.d/snippets")
 (yas-global-mode 1)
+
+;;; from http://emacs.stackexchange.com/questions/7908/how-to-make-yasnippet-and-company-work-nicer
+(defun check-expansion ()
+  (save-excursion
+    (if (looking-at "\\_>") t
+      (backward-char 1)
+      (if (looking-at "\\.") t
+        (backward-char 1)
+        (if (looking-at "->") t nil)))))
+
+(defun do-yas-expand ()
+  (let ((yas/fallback-behavior 'return-nil))
+    (yas/expand)))
+
+(defun tab-indent-or-complete ()
+  (interactive)
+  (cond
+    ((minibufferp)
+     (minibuffer-complete))
+    (t
+      (indent-for-tab-command)
+      (if (or (not yas/minor-mode)
+              (null (do-yas-expand)))
+        (if (check-expansion)
+          (progn
+            (company-manual-begin)
+            (if (null company-candidates)
+              (progn
+                (company-abort)
+                (indent-for-tab-command)))))))))
+
+(defun tab-complete-or-next-field ()
+  (interactive)
+  (if (or (not yas/minor-mode)
+          (null (do-yas-expand)))
+    (if company-candidates
+      (company-complete-selection)
+      (if (check-expansion)
+        (progn
+          (company-manual-begin)
+          (if (null company-candidates)
+            (progn
+              (company-abort)
+              (yas-next-field))))
+        (yas-next-field)))))
+
+(defun expand-snippet-or-complete-selection ()
+  (interactive)
+  (if (or (not yas/minor-mode)
+          (null (do-yas-expand))
+          (company-abort))
+    (company-complete-selection)))
+
+(defun abort-company-or-yas ()
+  (interactive)
+  (if (null company-candidates)
+    (yas-abort-snippet)
+    (company-abort)))
+
+(global-set-key [tab] 'tab-indent-or-complete)
+(global-set-key (kbd "TAB") 'tab-indent-or-complete)
+(global-set-key [(control return)] 'company-complete-common)
+
+(define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
+(define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
+
+(define-key yas-minor-mode-map [tab] nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+
+(define-key yas-keymap [tab] 'tab-complete-or-next-field)
+(define-key yas-keymap (kbd "TAB") 'tab-complete-or-next-field)
+(define-key yas-keymap (kbd "C-e") 'yas-next-field)
+(define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
+
 (require 'helm-c-yasnippet)
 (setq helm-yas-space-match-any-greedy t)
 
@@ -42,12 +116,12 @@
 (setq company-dabbrev-downcase nil)
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
-  (define-key company-active-map (kbd "M-n") nil)
-  (define-key company-active-map (kbd "M-p") nil)
-  (define-key company-active-map (kbd "C-n") #'company-select-next)
-  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+                      (define-key company-active-map (kbd "M-n") nil)
+                      (define-key company-active-map (kbd "M-p") nil)
+                      (define-key company-active-map (kbd "C-n") #'company-select-next)
+                      (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
-                                        ; Make sure path company works
+; Make sure path company works
 (delete 'company-files company-backends)
 (add-to-list 'company-backends 'company-files)
 
