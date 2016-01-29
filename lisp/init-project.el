@@ -54,4 +54,4 @@
             neotree-mode-map))
 
   (setq neo-hidden-files-regexp "^\\.\\|~$\\|^#.*#$\\|^target$\\|^pom\\.*")
-  (provide 'init-dired)
+  (provide 'init-project)

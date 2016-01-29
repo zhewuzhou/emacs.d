@@ -56,7 +56,7 @@
 (require 'init-themes)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
-(require 'init-dired)
+(require 'init-project)
 (require 'init-isearch)
 (require 'init-grep)
 (require 'init-uniquify)

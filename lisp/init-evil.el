@@ -43,6 +43,7 @@
   "O"  'other-window
   "q"  'save-buffers-kill-terminal
   "r"  'split-window-right
+  "s"  'helm-projectile-switch-project
   "S"  'delete-trailing-whitespace
   ;;; t is taken for helm-gtags
   "w"  'save-buffer
