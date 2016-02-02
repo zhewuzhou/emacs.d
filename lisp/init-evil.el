@@ -38,6 +38,7 @@
   "f"  'helm-projectile-find-file
   "F"  'helm-find-files
   "g"  'helm-projectile-ag
+  "l"  'helm-projectile-find-file-in-known-projects
   "m"  'markdown-preview
   "nt" 'neotree-toggle
   "O"  'other-window
