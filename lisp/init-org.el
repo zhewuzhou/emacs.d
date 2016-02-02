@@ -68,6 +68,7 @@
                             ("REVIEW" . ?r)
                             ("PERSONAL" . ?p)
                             ("WORK" . ?W)
+                            ("MANAGEMENT" . ?m)
                             ("PRODUCTIVE" . ?P)
                             ("RESEARCH" . ?R)
                             ("DATA" . ?D)
