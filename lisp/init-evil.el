@@ -51,10 +51,15 @@
   "W"  'save-some-buffers
   "x"  'helm-M-x
   "y"  'helm-yas-complete
-  "Y"  'helm-yas-create-snippet-on-region)
+  "Y"  'helm-yas-create-snippet-on-region
+  "z"  'term-current)
 
 (global-evil-matchit-mode 1)
 (evil-mode 1)
+
+(defun term-current ()
+  (interactive)
+  (ansi-term (getenv "SHELL") (projectile-project-root)))
 
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
