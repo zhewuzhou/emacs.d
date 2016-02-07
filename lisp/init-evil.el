@@ -35,6 +35,9 @@
   "C"  'ispell-word
   "d"  'delete-other-windows
   "D"  'delete-all-other-buffers
+  ;;; e is for ediff
+  "ea" 'diff-region-tag-selected-as-a
+  "eb" 'diff-region-compare-with-b
   "f"  'helm-projectile-find-file
   "F"  'helm-find-files
   "g"  'helm-projectile-ag
