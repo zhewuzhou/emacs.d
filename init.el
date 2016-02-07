@@ -49,6 +49,7 @@
 (require-package 'mwe-log-commands)
 
 ;; Init evil stuff
+(require 'init-diff)
 (require 'init-evil)
 
 (require 'init-frame-hooks)
