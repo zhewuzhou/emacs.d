@@ -53,5 +53,9 @@
                      (nt/refresh)))
             neotree-mode-map))
 
-  (setq neo-hidden-files-regexp "^\\.\\|~$\\|^#.*#$\\|^target$\\|^pom\\.*")
-  (provide 'init-project)
+(setq projectile-switch-project-action '(lambda()
+                                          (interactive)
+                                          (neotree-projectile-action)
+                                          (neotree-hide)))
+(setq neo-hidden-files-regexp "^\\.\\|~$\\|^#.*#$\\|^target$\\|^pom\\.*")
+(provide 'init-project)
