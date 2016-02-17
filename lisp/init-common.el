@@ -149,6 +149,9 @@
 ;;; from http://emacs.stackexchange.com/questions/14509/kill-process-buffer-without-confirmation
 (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
+;;; because terminal is not GUI could not share clipboard as normal-about-screen
+;;; from http://stackoverflow.com/questions/5288213/how-can-i-paste-the-selected-region-outside-of-emacs
+;;; now you could do copy by select->M w inside Emacs->C v anywhere as you want
 (setq interprogram-cut-function
       (lambda (text &optional push)
         (let* ((process-connection-type nil)
