@@ -144,4 +144,9 @@
 (set-face-attribute 'default t :font "Courier New-18")
 (add-to-list 'default-frame-alist '(font . "Courier New-18"))
 
+;;;====================COMMON-SETTING====================
+;;; this is the setting for kill buffer without confirmation
+;;; from http://emacs.stackexchange.com/questions/14509/kill-process-buffer-without-confirmation
+(setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
+
 (provide 'init-common)

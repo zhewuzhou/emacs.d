@@ -57,6 +57,7 @@
                                           (interactive)
                                           (neotree-projectile-action)
                                           (neotree-hide)
+                                          (kill-term)
                                           (projectile-find-file)))
 (setq neo-hidden-files-regexp "^\\.\\|~$\\|^#.*#$\\|^target$\\|^pom\\.*")
 (provide 'init-project)

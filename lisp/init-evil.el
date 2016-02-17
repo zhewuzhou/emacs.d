@@ -1,4 +1,5 @@
 ;; This is a place to put my own stuff
+(require-package 'dash)
 (require-package 'evil)
 (require-package 'evil-leader)
 (require-package 'evil-matchit)
@@ -55,14 +56,33 @@
   "x"  'helm-M-x
   "y"  'helm-yas-complete
   "Y"  'helm-yas-create-snippet-on-region
-  "z"  'term-current)
+  "z"  'current-term)
 
 (global-evil-matchit-mode 1)
 (evil-mode 1)
 
-(defun term-current ()
+(defun find-term-buffer ()
   (interactive)
-  (ansi-term (getenv "SHELL") (projectile-project-root)))
+  (car (-filter (lambda (b)
+                  (eq 'term-mode (buffer-local-value 'major-mode b)))
+                (buffer-list))))
+
+;;; this is the setting for kill buffer without confirmation
+;;; from http://emacs.stackexchange.com/questions/14509/kill-process-buffer-without-confirmation
+(setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
+
+(defun kill-term ()
+  (interactive)
+  (if (find-term-buffer)
+    (kill-buffer (find-term-buffer)))
+    )
+
+(defun current-term ()
+  (interactive)
+  (if (find-term-buffer)
+    (switch-to-buffer (buffer-name (find-term-buffer)))
+    (ansi-term (getenv "SHELL") (projectile-project-root))
+    ))
 
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
