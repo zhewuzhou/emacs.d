@@ -139,11 +139,6 @@
 (evil-define-key 'insert emmet-mode-keymap (kbd "C-n") 'emmet-next-edit-point)
 (evil-define-key 'insert emmet-mode-keymap (kbd "C-p") 'emmet-prev-edit-point)
 
-;;;====================FONT====================
-(set-frame-parameter nil 'fullscreen 'fullboth)
-(set-face-attribute 'default t :font "Courier New-18")
-(add-to-list 'default-frame-alist '(font . "Courier New-18"))
-
 ;;;====================COMMON-SETTING====================
 ;;; this is the setting for kill buffer without confirmation
 ;;; from http://emacs.stackexchange.com/questions/14509/kill-process-buffer-without-confirmation
