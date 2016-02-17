@@ -149,4 +149,14 @@
 ;;; from http://emacs.stackexchange.com/questions/14509/kill-process-buffer-without-confirmation
 (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
+(setq interprogram-cut-function
+      (lambda (text &optional push)
+        (let* ((process-connection-type nil)
+               (pbproxy (start-process "pbcopy" "pbcopy" "/usr/bin/pbcopy")))
+          (process-send-string pbproxy text)
+          (process-send-eof pbproxy))))
+
+(setq x-select-enable-primary t)
+(setq x-select-enable-clipboard t)
+
 (provide 'init-common)
