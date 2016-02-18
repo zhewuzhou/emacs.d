@@ -80,8 +80,8 @@
 (defun current-term ()
   (interactive)
   (if (find-term-buffer)
-    (switch-to-buffer (buffer-name (find-term-buffer)))
-    (ansi-term (getenv "SHELL") (projectile-project-root))
+      (switch-to-buffer (buffer-name (find-term-buffer)))
+    (ansi-term (getenv "SHELL") "editing-file-root")
     ))
 
 (defun switch-to-previous-buffer ()
