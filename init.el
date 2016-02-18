@@ -159,7 +159,7 @@
 
 (require 'init-linum)
 (require 'init-input)
-(require 'init-common)
+(require 'init-editing-support)
 
 (provide 'init)
 

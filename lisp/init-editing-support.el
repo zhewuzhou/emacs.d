@@ -128,9 +128,6 @@
 ;;;====================RAINBOW-DELIMITERS====================
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-;;;====================LOAD-MY-BASH-CONFIG====================
-(setq explicit-bash-args '("--login" "--init-file" "~/.bashrc" "-i"))
-
 ;;;====================EMMET-MODE====================
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
@@ -157,4 +154,4 @@
 (setq x-select-enable-primary t)
 (setq x-select-enable-clipboard t)
 
-(provide 'init-common)
+(provide 'init-editing-support)
