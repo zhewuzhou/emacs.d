@@ -6,6 +6,7 @@
 (require-package 'evil-surround)
 (require-package 'evil-nerd-commenter)
 (require-package 'evil-jumper)
+(require-package 'evil-anzu)
 (require-package 'avy)
 
 ;;;====================EVIL====================
@@ -15,6 +16,7 @@
 (require 'evil-matchit)
 (require 'evil-surround)
 
+(with-eval-after-load 'evil (require 'evil-anzu))
 (evil-leader/set-leader ",")
 (global-evil-leader-mode 1)
 (setq evil-leader/in-all-states t)
