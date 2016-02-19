@@ -1,4 +1,4 @@
-;; This is a place to put my own stuff
+;;; This is a place to put my own stuff
 (require-package 'dash)
 (require-package 'evil)
 (require-package 'evil-leader)
@@ -36,17 +36,18 @@
   "cr" 'comment-or-uncomment-region
   "cv" 'evilnc-toggle-invert-comment-line-by-line'
   "C"  'ispell-word
-  "d"  'delete-other-windows
+  "da" 'diff-region-tag-selected-as-a
+  "db" 'diff-region-compare-with-b
+  "dw" 'delete-other-windows
   "D"  'delete-all-other-buffers
-  ;;; e is for ediff
-  "ea" 'diff-region-tag-selected-as-a
-  "eb" 'diff-region-compare-with-b
+  ;;; e is for evaluate for specific language
   "f"  'helm-projectile-find-file
   "F"  'helm-find-files
   "g"  'helm-projectile-ag
   "l"  'helm-projectile-find-file-in-known-projects
   "m"  'markdown-preview
   "nt" 'neotree-toggle
+  ;;; o is for org mode
   "O"  'other-window
   "q"  'save-buffers-kill-terminal
   "r"  'split-window-right
@@ -76,8 +77,8 @@
 (defun kill-term ()
   (interactive)
   (if (find-term-buffer)
-    (kill-buffer (find-term-buffer)))
-    )
+      (kill-buffer (find-term-buffer)))
+  )
 
 (defun current-term ()
   (interactive)
