@@ -44,6 +44,7 @@
   "f"  'helm-projectile-find-file
   "F"  'helm-find-files
   "g"  'helm-projectile-ag
+  "i"  'indent-region
   "l"  'helm-projectile-find-file-in-known-projects
   "m"  'markdown-preview
   "nt" 'neotree-toggle
